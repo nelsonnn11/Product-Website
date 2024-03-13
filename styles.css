@@ -20,7 +20,6 @@ header{
   }
 
   img {
-    margin-top: 200px;
     margin-left: 25px;
     height: 450px;
     width: 450px;
@@ -38,3 +37,18 @@ h3 {
     color: white;
     margin-left: 45px;
 }
+
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 15em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
