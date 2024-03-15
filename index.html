@@ -1,34 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    
-    <header>
-      <div class="overlay">
-      </div>
-    </header>
-    
-    
-      <div class="row">
-        <div class="col">
-          <img src="img/brown.png" alt="Your Image">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Website</title>
+  <link rel="icon" type="" href="img/cap.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="overlay"></div>
+</header>
+
+
+
+<div class="container" mt-5 style= "margin-top: 10em"> <!-- Adjust margin-top -->
+  <div class="row justify-content-end text-end">
+    <div class="col-6">
+      <div class="card bg-dark text-light">
+        <div class="card-body">
+          <h5 class="card-title">Shopping Cart <img src="img/shopping-cart.png" alt="Your Image" id="small"></h5>
+          <span id="cartItemCount">0</span> items in cart
         </div>
-        <div class="col">
-          <h1>GolfWang Hat</h1>
-          <h3>OUT OF STOCK</h3>
-          <h3>SHIPPING FREE</h3>
-          <h3>PRICE : $25.00</h3>
-        </div>   
-        <div class="col-md-4 ms-auto text-end">
+      </div>
     </div>
-    
-      
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <img src="img/brown.png" alt="Your Image" id="productImage">
+    </div>
+    <div class="col">
+      <h1 id="productTitle">GolfWang Hat</h1> <!-- Added ID for dynamic updating -->
+      <h3 id="outOfStockText">FEW REMAINING</h3> <!-- Added ID for dynamic updating -->
+      <h3>SHIPPING FREE</h3>
+      <h3>PRICE : $25.00</h3>
+      <button type="button" class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+      <button type="button" class="btn btn-danger" id="removeFromCartBtn">Remove from Cart</button>
+      <div class="cart-info">
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <!-- Colored squares in horizontal line -->
+  <div class="row">
+    <div class="col d-flex justify-content-start">
+      <div class="color-square" id="color1"></div>
+      <div class="color-square" id="color2"></div>
+      <div class="color-square" id="color3"></div>
+      <div class="color-square" id="color4"></div>
+      <div class="color-square" id="color5"></div>
+      <div class="color-square" id="color6"></div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Leave a Review Form -->
+      <div class="col-md-6">
+        <h2 class="mb-4">Leave a Review</h2>
+        <form id="reviewForm">
+          <div class="mb-3">
+            <label for="reviewerName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="reviewerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="reviewContent" class="form-label">Your Review</label>
+            <textarea class="form-control" id="reviewContent" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+      </div>
+  
+      <!-- Display Reviews Section -->
+      <div class="col-md-6">
+        <h2 class="mb-4">Reviews</h2>
+        <ul id="reviewsList"></ul>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<script src="main.js"></script>
+<script src="assets/Productdisplay.js"></script>
+<script src="assets/ReviewForm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
 </html>
