@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product Website</title>
+  <link rel="icon" type="" href="img/cap.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,7 +14,9 @@
   <div class="overlay"></div>
 </header>
 
-<div class="container" style="margin-top: 10em;"> <!-- Adjust margin-top -->
+<div class="container" mt-5 style= "margin-top: 10em"> <!-- Adjust margin-top -->
+  <!-- Your existing HTML code here -->
+
   <div class="row">
     <div class="col">
       <img src="img/brown.png" alt="Your Image" id="productImage">
@@ -29,6 +32,9 @@
       </div>
     </div>
   </div>
+
+
+
   
   <!-- Colored squares in horizontal line -->
   <div class="row">
@@ -41,11 +47,52 @@
       <div class="color-square" id="color6"></div>
     </div>
   </div>
+
+
+  <!-- Review Form -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h2 class="mb-4">Leave a Review</h2>
+      <form id="reviewForm">
+        <div class="mb-3">
+          <label for="reviewerName" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="reviewerName" required>
+        </div>
+        <div class="mb-3">
+          <label for="reviewContent" class="form-label">Your Review</label>
+          <textarea class="form-control" id="reviewContent" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Display Reviews Section -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h2 class="mb-4">Reviews</h2>
+      <ul id="reviewsList"></ul>
+    </div>
+  </div>
+  
+  <!-- Cart display card -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="card bg-dark text-light">
+        <div class="card-body">
+          <h5 class="card-title">Shopping Cart</h5>
+          <span id="cartItemCount">0</span> items in cart
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="main.js"></script>
+<script src="assets/Productdisplay.js"></script>
+<script src="assets/ReviewForm.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 
 </body>
 </html>

@@ -7,7 +7,6 @@ header{
     
   }
   
-  
   body {
     background-color: #232324;
   }
@@ -24,6 +23,11 @@ h1 {
     color: white;
     margin-left: 25px;
     padding-top: 20px;
+}
+
+h2 {
+  color: white;
+ 
 }
 
 h3 {
@@ -95,3 +99,50 @@ p {
 color: white;
 }
 
+/* CSS for styling the cart display card */
+.cart-display {
+  max-width: 200px; 
+
+  padding: 10px; 
+}
+
+.cart-display .card-title {
+  font-size: 1.2rem;
+}
+
+.cart-display .card-text {
+  font-size: 1rem; 
+}
+
+.text-white {
+  color: white;
+}
+
+.form-label {
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+.form-control {
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+.btn-primary:hover {
+  background-color: #213bd32d;
+}
+
+  /* CSS for Review Form */
+  .form-label {
+    color: white; 
+    font-size: 1.5rem; 
+}
+
+.form-control {
+    color: white; 
+    font-size: 1.5rem; 
+}
+
+/* CSS for Display Reviews Section */
+#reviewsList {
+    color: white; 
+    font-size: 1.5rem; 
+}

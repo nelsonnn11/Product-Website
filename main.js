@@ -1,49 +1,32 @@
-const productImage = document.getElementById('productImage');
-const colorSquares = document.querySelectorAll('.color-square');
-const productTitle = document.getElementById('productTitle'); 
-const outOfStockText = document.getElementById('outOfStockText'); 
+const addToCartBtn = document.getElementById('addToCartBtn');
+const removeFromCartBtn = document.getElementById('removeFromCartBtn');
+const cartItemCount = document.getElementById('cartItemCount');
+const cartDisplay = document.getElementById('cartDisplay');
 
-colorSquares.forEach(square => {
-  square.addEventListener('click', function() {
-    // Get the color ID from the square's ID
-    const colorID = this.id;
+let cartItemsCount = 0;
+let cartContent = '';
 
-    // Change the image source based on the color ID
-    switch (colorID) {
-      case 'color1':
-        productImage.src = 'img/olive.png';
-        productTitle.textContent = 'GolfWang Hat (Olive)'; // Update product title
-        outOfStockText.textContent = 'IN STOCK'; // Update out of stock text
-        break;
-      case 'color2':
-        productImage.src = 'img/blue.png';
-        productTitle.textContent = 'GolfWang Hat (Blue)'; 
-        outOfStockText.textContent = 'FEW REMAINING'; 
-        break;
-      case 'color3':
-        productImage.src = 'img/green.png';
-        productTitle.textContent = 'GolfWang Hat (Green)'; 
-        outOfStockText.textContent = 'IN STOCK'; 
-        break;
-      case 'color4':
-        productImage.src = 'img/yellow.png';
-        productTitle.textContent = 'GolfWang Hat (Yellow)';
-        outOfStockText.textContent = 'IN STOCK'; 
-        break;
-      case 'color5':
-        productImage.src = 'img/white.png';
-        productTitle.textContent = 'GolfWang Hat (White)';
-        outOfStockText.textContent = 'FEW REMAINING'; 
-        break;
-      case 'color6':
-        productImage.src = 'img/brown.png';
-        productTitle.textContent = 'GolfWang Hat';      
-        outOfStockText.textContent = 'OUT OF STOCK'; 
-        break;
-      default:
-        productImage.src = 'img/brown.png';
-        productTitle.textContent = 'GolfWang Hat'; 
-        outOfStockText.textContent = 'OUT OF STOCK'; 
-    }
-  });
+// Function to update cart count and display
+function updateCart() {
+  cartItemCount.textContent = cartItemsCount;
+  if (cartItemsCount === 0) {
+    cartContent = 'No items added to cart';
+  } else {
+    cartContent = `${cartItemsCount} item${cartItemsCount > 1 ? 's' : ''} in cart`;
+  }
+  cartDisplay.textContent = cartContent;
+}
+
+// Add to cart button click event
+addToCartBtn.addEventListener('click', () => {
+  cartItemsCount++;
+  updateCart();
+});
+
+// Remove from cart button click event
+removeFromCartBtn.addEventListener('click', () => {
+  if (cartItemsCount > 0) {
+    cartItemsCount--;
+    updateCart();
+  }
 });
